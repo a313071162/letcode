@@ -18,7 +18,7 @@ class Solution:
     其次自己的看题真的很有问题，希望多加改进
     """
     def myAtoi(self, str: str) -> int:
-        nums = str.strip().split(' ')
+        nums = str.lstrip().split(' ')
         for value in nums:
             if value == '':
                 continue
@@ -45,3 +45,18 @@ class Solution:
             else:
                 return 0
         return 0
+
+# 大佬代码，其实自己懂，但是完全想不到哪儿去
+import re
+class Solutions:
+    def myAtoi(self, str: str) -> int:
+        try:
+            a = int(re.findall('^[\+\-]?\d+', str.lstrip())[0])
+            if a > 2 ** 31 - 1:
+                return 2 ** 31 - 1
+            elif a < -2 ** 31:
+                return -2 ** 31
+            else:
+                return a
+        except:
+            return 0
