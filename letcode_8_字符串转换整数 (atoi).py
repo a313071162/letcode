@@ -51,6 +51,7 @@ import re
 class Solutions:
     def myAtoi(self, str: str) -> int:
         try:
+            # 通过正则来判断，且通过findall找出所有的与条件相符的字符串，只选第一个
             a = int(re.findall('^[\+\-]?\d+', str.lstrip())[0])
             if a > 2 ** 31 - 1:
                 return 2 ** 31 - 1
