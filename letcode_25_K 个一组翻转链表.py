@@ -90,23 +90,3 @@ class Solutionss:
                     value.next = None
                     count = 0
         return start.next
-
-        # print(2222)
-        # return start
-
-if __name__ == '__main__':
-    l1 = ListNode(1)
-    s1 = ListNode(2)
-    t1 = ListNode(3)
-    m1 = ListNode(4)
-    n1 = ListNode(5)
-    l1.next = s1
-    # s1.next = t1
-    # t1.next = m1
-    # m1.next = n1
-
-    sol = Solutionss()
-    s = sol.reverseKGroup(l1, 2)
-    while s:
-        print(s.val)
-        s = s.next
