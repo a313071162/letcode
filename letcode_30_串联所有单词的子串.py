@@ -113,8 +113,3 @@ class Solutionsss:
                 i = i + words_len
         return res
 
-
-if __name__ == '__main__':
-    sol = Solutionsss()
-    s = sol.findSubstring("wordgoodgoodgoodbestword",["word","good","best","good"])
-    print(s)
