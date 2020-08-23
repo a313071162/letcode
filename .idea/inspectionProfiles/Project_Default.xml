@@ -1,0 +1,18 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="AcousticModel.Learning_RATE" />
+          <option value="AcousticModel.tensorflow" />
+          <option value="AcousticModel.keras" />
+          <option value="AcousticModel.cnn_cell" />
+          <option value="tensorflow.variable_scope" />
+          <option value="tensorflow.get_variable" />
+          <option value="tensorflow.contrib" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
