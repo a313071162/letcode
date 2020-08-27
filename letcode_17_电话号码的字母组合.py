@@ -66,3 +66,36 @@ class Solutions:
         else:
             return self.res
 
+
+class Solutionss(object):
+    def letterCombinations(self, digits):
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
+        number = {
+            '2': 'abc',
+            '3': 'def',
+            '4': 'ghi',
+            '5': 'jkl',
+            '6': 'mno',
+            '7': 'pqrs',
+            '8': 'tuv',
+            '9': 'wxyz'
+        }
+        res = []
+        def dfs(digits, st):
+            if len(digits) == 0:
+                res.append(st)
+                return
+            for val in number[digits[0]]:
+                dfs(digits[1:], st + val)
+        if digits:
+            dfs(digits, "")
+        else:
+            return res
+        return res
+
+if __name__ == '__main__':
+    sol = Solutionss()
+    print(sol.letterCombinations('234'))
