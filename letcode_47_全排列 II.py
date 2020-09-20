@@ -13,7 +13,7 @@
 
 #	通过库函数执行所得的效率更高，用递归主要是了解一下全排列的思想
 
-class Solution:
+class Solutions:
 #	全排列 II
     def __init__(self):
         self.res_self = []
@@ -39,3 +39,37 @@ class Solution:
 #         https://blog.csdn.net/Together_CZ/article/details/86583727
 #         该主编列出了7中去重的方式，写的很不错
             return list(set(self.res_self))
+
+
+class Solution(object):
+    def permuteUnique(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        res = set()
+        lens = len(nums)
+        if lens <= 1:
+            res.add(tuple(nums))
+        else:
+            def dfs(nums, start, ends):
+                if start == ends:
+                    res.add(tuple(nums))
+                    return ""
+                else:
+                    for index in range(start, ends + 1):
+                        nums[index], nums[start] = nums[start], nums[index]
+                        dfs(nums, start + 1, ends)
+                        nums[index], nums[start] = nums[start], nums[index]
+
+            dfs(nums, 0, lens - 1)
+
+        return [list(val) for val in res]
+
+
+
+
+
+if __name__ == '__main__':
+    sol = Solution()
+    print(sol.permuteUnique([1,2,3]))
