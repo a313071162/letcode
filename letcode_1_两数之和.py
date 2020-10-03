@@ -10,7 +10,7 @@
 @return：
 """
 
-class Solution:
+class Solutions:
     def twoSum(self, nums: list, target: int) -> list:
         """
         两数之和
@@ -34,3 +34,24 @@ class Solution:
             target = target + this_num[i]
         return sorted(index)
 
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        res = []
+        for index in range(len(nums)):
+            try:
+                if (target - nums[index]) in nums:
+                    res.append(nums.index(target - nums[index], index + 1))
+                    res.append(index)
+            except:
+                continue
+        return res
+
+if __name__ == '__main__':
+    sol = Solution()
+    print(sol.twoSum([-1,-2,-3,-4,-5],-8))
