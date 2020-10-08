@@ -11,7 +11,7 @@
 """
 
 # 双指针法，由于是两个for循环，效率相对来说不是很高。
-class Solution:
+class Solutionss:
     def fourSum(self, nums: list, target: int) -> list:
         sums = []
         n_len = len(nums)
@@ -77,4 +77,6 @@ class Solutions:
                     temp.append(nums[k])
         return sums
 
-
+if __name__ == '__main__':
+    sol = Solutions()
+    sol.fourSum([1, 0, -1, 0, -2, 2], 0)
