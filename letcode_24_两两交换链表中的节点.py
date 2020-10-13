@@ -17,7 +17,7 @@ class ListNode:
         self.next = None
 
 # 暴力法
-class Solution:
+class Solutionsss:
     def swapPairs(self, head: ListNode) -> ListNode:
         if not head or not head.next:
             return head
@@ -68,3 +68,33 @@ class Solutionss:
         l.next = head
         return l
 
+class Solution(object):
+    def swapPairs(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        start = l = ListNode(-1)
+        l.next = head
+        while l.next and l.next.next:
+            l1 = l.next
+            l2 = l.next.next
+
+            l.next = l2
+            l1.next = l2.next
+            l2.next = l1
+            l = l1
+
+        return start.next
+
+
+
+
+if __name__ == '__main__':
+    head = ListNode(1)
+    head.next = ListNode(2)
+    head.next.next = ListNode(3)
+    head.next.next.next = ListNode(4)
+
+    sol = Solution()
+    print(sol.swapPairs(head))
