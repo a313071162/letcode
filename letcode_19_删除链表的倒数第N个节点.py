@@ -18,7 +18,7 @@ class ListNode:
         self.next = None
 
 # 两次扫描 80ms
-class Solution:
+class Solutionsss:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         """
         删除倒数结点，题目说明保证n有效，则不用判断超出的情况
@@ -92,6 +92,31 @@ class Solutionss:
         return val[0]
 
 
+class Solution:
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        if not head.next:
+            return []
+        res = []
+        while head:
+            res.append(head)
+            head = head.next
+        lens = len(res)
+        if n == 1:
+            res[lens - 2].next = None
+        elif n == lens:
+            return res[1]
+        else:
+            res[lens - n - 1].next = res[lens - n].next
+        return res[0]
 
 
+if __name__ == '__main__':
+    head = ListNode(1)
+    head.next = ListNode(2)
+    head.next.next = ListNode(3)
+    head.next.next.next = ListNode(4)
+    head.next.next.next.next = ListNode(5)
+
+    sol = Solution()
+    sol.removeNthFromEnd(head, 2)
 
