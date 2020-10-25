@@ -2,24 +2,21 @@
 
 
 """
-@File    : letcode_810_黑板异或游戏.py
-@Time    : 2020/9/25 上午10:45
+@File    : 剑指Offer_61_扑克牌中的顺子.py.py
+@Time    : 2020/10/24 下午9:25
 @Author  : dididididi
 @Email   : 
 @Software: PyCharm
 """
 
-import functools
-import operator
 class Solution(object):
-    def xorGame(self, nums):
+    def isStraight(self, nums):
         """
         :type nums: List[int]
         :rtype: bool
         """
-        print(functools.reduce(operator.xor, nums))
 
 
 if __name__ == '__main__':
     sol = Solution()
-    print(sol.xorGame([1, 2, 4]))
+    sol.isStraight([1,2,3,4,5])
